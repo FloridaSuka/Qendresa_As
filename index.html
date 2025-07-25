@@ -36,7 +36,9 @@
                             <input type="text" id="reg-name" name="emri" class="input-field1" placeholder="Emri dhe Mbiemri" autocomplete="name" required>
                             <input type="text" name="emri_perdoruesit" class="input-field1" placeholder="Emri Përdoruesit" required>
                             <input type="email" id="reg-email" name="email" class="input-field1" placeholder="Email" autocomplete="email" required>
-                            <input type="date" name="datelindja" class="input-field1" placeholder="Datëlindja (YYYY-MM-DD)" required>
+                            <input type="text" name="datelindja" class="input-field1"
+                                placeholder="Datëlindja (YYYY-MM-DD)" required
+                                onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}">
                             <input type="password" name="password" class="input-field1" placeholder="Fjalëkalimi" required>
                             <input type="password" name="confirm password" class="input-field1" placeholder="Rivendos Fjalëkalimin" required>
                             <button type="submit" class="submit-btn">Regjistrohu</button>
