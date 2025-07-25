@@ -375,6 +375,7 @@ html, body {
         justify-content: center;
     }
     .form-box {
+        top: -15px;
         padding: 15px;
         border-radius: 10px;
         height: auto;
@@ -401,7 +402,7 @@ html, body {
 
     .input-field1, .input-field {
         font-size: 0.9rem;
-        padding: 0.4rem 0;
+        padding: 0.3rem 0;
     }
     .input-field{
         padding: 1rem 0;
