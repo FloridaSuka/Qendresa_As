@@ -220,7 +220,7 @@ body{
 
 .input-field::placeholder,
 .input-field1::placeholder {
-    color: white;
+    color: rgba(255, 255, 255, 0.553);
     opacity: 1;
 }
 
