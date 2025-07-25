@@ -1,0 +1,422 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{    
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb{
+    background:#264653;
+    border-radius: 10px;
+}
+
+/* STRUKTURA E FAQES */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif ;
+    background: linear-gradient(135deg, #6A7C8B 0%, #3F4E5A 50%, #2E3D49 100%);
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    height: 100vh;
+    padding: 0 5vw;
+}
+
+/* DIVI VIEW NE MAJTË */
+.view {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 50px;
+}
+
+/* LOGO NE QENDËR TË VIEW */
+.view .logo {
+    margin-bottom: 30px;
+    position: relative;
+    left: 0;
+    transform: none;
+}
+
+/* SHKRIMI & LINKU */
+.view .show {
+    text-align: center;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.view .next {
+    margin-top: 20px;
+}
+
+.logo {
+    position: absolute;
+    top: 8%;
+    left: 1%;
+    transform: translateX(-50%);
+    width: 30vw;
+    max-width: 230px;
+    min-width: 100px;
+    height: auto;
+    animation: zoomLogo 3s ease-out forwards;
+    transform-origin: center;
+    filter: drop-shadow(0 0 6px white);
+}
+
+@font-face {
+    font-family: 'Bauquet Script';
+    src: url('fonts/BauquetScript.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.show {
+    font-family: 'Baquet Script', cursive;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    position: relative;
+    top: 30vh;
+    left: 10vw;
+    max-width: 90%;
+    width: 600px;
+}
+
+.next {
+    display: block;
+    margin: 60px auto 20px auto;
+    text-decoration: underline;
+    color: rgb(255, 255, 255);
+    font-size: 1rem; 
+    text-align: center;
+    max-width: 90%;
+    text-shadow: 0 0 3px rgb(0, 0, 0);
+    font-family: 'Baquet Script', cursive;
+    font-weight: bold;
+}
+
+.next:hover {
+    color: #F4A261;
+}
+
+.login-register {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box {
+    width: 90%;
+    max-width: 380px;
+    min-height: 450px;
+    position: relative;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.207);
+    padding: 20px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.button-box {
+    width: 90%;
+    max-width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0px 0px 0px 1px rgb(235, 194, 194);
+    border-radius: 30px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 50%; /* më mirë se 110px për pajisje të ndryshme */
+    height: 100%;
+    background: linear-gradient(to right, #45cfbf, #2A9D8F);
+    border-radius: 30px;
+    transition: 0.4s ease;
+    z-index: 1;
+}
+
+.toggle-btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px 25px; /* padding horizontal i hequr për më shumë hapësirë në telefon */
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    color: #fff;
+    font-size: 1rem;
+    z-index: 2; 
+}
+
+/* Formave u vendos width 100% */
+#login, #register {
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    transition: left 0.5s ease;
+}
+#login{
+    top: 10px;
+}
+
+.input-group {
+    padding-top: 60px;
+    padding-left: 10px;
+    position: relative;
+    width: 90%;
+    max-width: 280px;
+    transition: transform 0.5s ease;
+    margin-left: 0; /* ose vendos 0 për të qenë në të majtë */
+}
+
+.input-field1, .input-field {
+    width: 100%;
+    padding: 0.7rem 0;  /* për `.input-field1` (5px = 0.3125rem, pak më shumë për lehtësi leximi) */
+    margin: 0.1rem 0;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: border-color 0.3s ease;
+}
+
+.input-field {
+    padding: 1.5rem 0; /* 15px = 0.9375rem */
+    margin: 0.6rem 0;
+}
+
+.input-field1:focus, .input-field:focus {
+    border-bottom-color: #2A9D8F; /* Ngjyra e gradientit, për harmonizim */
+}
+
+.input-field::placeholder,
+.input-field1::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.submit-btn1 {
+    position: relative;
+    top: 30px;
+    width: 85%;
+    max-width: 300px; /* kufizim maksimal për desktop */
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    background: linear-gradient(to right, #45cfbf 50%, #2A9D8F 80%);
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn1:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(42, 157, 143, 0.5);
+}
+
+.submit-btn {
+    position: relative;
+    top: 0;
+    width: 85%;
+    max-width: 300px; /* kufizim maksimal për desktop */
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    background: linear-gradient(to right, #45cfbf 50%, #2A9D8F 80%);
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: #fff;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(42, 157, 143, 0.5);
+}
+
+.button1 a{
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.769);
+    font-size: 12px;
+    top: 75%;
+    left:27%
+}
+
+@keyframes zoomLogo {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes verticalFlip {
+    0%   { transform: translateY(0%) rotateY(0deg); }
+    100% { transform: translateY(0%) rotateY(360deg); }
+}
+
+.logo.flip {
+    animation: verticalFlip 1s ease-in-out;
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+        padding: 0 2vw;
+        height: auto;
+    }
+    .view, .login-register {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .view .logo {
+        display: block;
+        width: 45vw;
+        max-width: 150px;
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+        top: 7px;
+        left: 0;
+        transform: none;
+    }
+    
+    .view .show {
+        top: 0;
+        left: 0;
+        margin: 2% 2%;
+        text-align: center;
+        font-size: 1rem;
+    }
+    .next {
+        font-size: 0.9rem;
+        margin: 40px auto 10px auto;
+    }
+
+    .logo {
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 45vw;
+        max-width: 180px;
+        height: auto;
+        animation: zoomLogo 3s ease-out forwards, rotateLogo 2s linear 3s infinite;
+        transform-origin: center;
+        z-index: 10;
+        filter: drop-shadow(0 0 6px white);
+    }
+    .show {
+        font-size: 1.2rem;
+        top: 18vh;
+        left: 5vw;
+        text-align: left;
+        width: 90%;
+    }
+     .next {
+        font-size: 0.9rem;
+        margin: 40px auto 10px auto;
+    }
+    .login-register {
+        margin-top: 30px;
+        width: 95%;
+        justify-content: center;
+    }
+    .form-box {
+        padding: 15px;
+        border-radius: 10px;
+        min-height: 450;
+    }
+    .button-box {
+        width: 95%;
+        max-width: 180px;
+        padding: 4px;
+        box-shadow: 0px 0px 0px 1px rgb(220, 180, 180);
+    }
+     #btn {
+        border-radius: 25px;
+    }
+    .toggle-btn {
+        font-size: 0.9rem;
+        padding: 8px 0;
+    }
+    #login, #register {
+        left: 0;
+        width: 100%;
+        top: 20px;
+    }
+
+    .input-field1, .input-field {
+        font-size: 0.9rem;
+        padding: 0.4rem 0;
+    }
+    .input-field{
+        padding: 1rem 0;
+    }
+
+    .submit-btn1 {
+        width: 90%;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+        top: 40px;
+    }
+
+    .submit-btn {
+        width: 90%;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+        top: 25px;
+    }
+
+    .button1 a {
+        font-size: 10px;
+        top: 50%;
+        left: 0;
+    }
+}
+
