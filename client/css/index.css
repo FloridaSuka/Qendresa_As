@@ -363,7 +363,7 @@ body{
         margin: 40px auto 10px auto;
     }
     .login-register {
-        margin-top: 30px;
+        margin-top: -30px;
         width: 95%;
         justify-content: center;
     }
@@ -379,6 +379,7 @@ body{
         box-shadow: 0px 0px 0px 1px rgb(220, 180, 180);
     }
      #btn {
+        width: 41.5%;
         border-radius: 25px;
     }
     .toggle-btn {
