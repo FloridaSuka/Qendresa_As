@@ -16,12 +16,10 @@ body, html {
     padding: 0;
     height: 100%;
     box-sizing: border-box;
-}
-
-body{
     font-family: 'Poppins', sans-serif ;
     background: linear-gradient(135deg, #6A7C8B 0%, #3F4E5A 50%, #2E3D49 100%);
 }
+
 
 
 .container {
@@ -358,12 +356,12 @@ body{
         text-align: left;
         width: 90%;
     }
-     .next {
+    .next {
         font-size: 0.9rem;
         margin: 40px auto 10px auto;
     }
     .login-register {
-        margin-top: -30px;
+        margin: -30px auto;
         width: 95%;
         justify-content: center;
     }
