@@ -73,6 +73,11 @@ html, body {
     filter: drop-shadow(0 0 6px white);
 }
 
+ select.input-field1 option {
+        background-color: #264653; /* ngjyra që dëshiron ti */
+        color: white;
+    }
+
 @font-face {
     font-family: 'Bauquet Script';
     src: url('fonts/BauquetScript.ttf') format('truetype');
@@ -200,7 +205,7 @@ html, body {
 
 .input-field1, .input-field {
     width: 100%;
-    padding: 0.7rem 0;  /* për `.input-field1` (5px = 0.3125rem, pak më shumë për lehtësi leximi) */
+    padding: 0.4rem 0;  /* për `.input-field1` (5px = 0.3125rem, pak më shumë për lehtësi leximi) */
     margin: 0.1rem 0;
     border: none;
     border-bottom: 1px solid #fff;
@@ -413,7 +418,7 @@ html, body {
         width: 90%;
         padding: 14px 20px;
         font-size: 0.95rem;
-        top: 25px;
+        top: 0;
     }
 
     .button1 a {
