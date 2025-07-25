@@ -5,12 +5,13 @@
         <title>Qëndresa-AS - Kyçja dhe Regjistrimi</title>
         <link rel="stylesheet" href="client\css\index.css">
         <link rel="icon" type="image/png" href="client/img/logo.png" />
+    </head>
     <body>
         <div class="container">
             <div class="view">
                 <img src="client/img/logo.png" alt="Logo" class="logo">
                 <p class="show" id="wave-text">Mirë se vini në Qëndresa-AS!<br>Së bashku fillojmë një rrugëtim të sigurt.</p>
-                <a href="#" class="next">Vazhdo pa u kyçur</a>
+                <a href="client\home.html" class="next">Vazhdo pa u kyçur</a>
             </div>
 
             <div class="login-register">
@@ -21,18 +22,20 @@
                         <button type="button" class="toggle-btn" onclick="register()">Hyr</button>
 
                         <!--FORMA PER LOGIN-->
-                        <form id="login" class="input-group">
-                            <input type="text" name="emri_perdoruesit" class="input-field" placeholder="Emri i përdoruesit" required>
-                            <input type="password" name="password" class="input-field" placeholder="Fjalëkalimi" required>
-                            <label class="button1"><a href="resetPassword.php">Keni harruar fjalëkalimin?</a></label>
+                        <form id="login" class="input-group active">
+                            <input type="text" id="login-username" name="emri_perdoruesit" class="input-field" placeholder="Emri i përdoruesit" autocomplete="username" required>
+                            <input type="password" id="login-password" name="password" class="input-field" placeholder="Fjalëkalimi" autocomplete="current-password" required>
+                            <div class="button1">
+                                <a href="resetPassword.php">Keni harruar fjalëkalimin?</a>
+                            </div>
                             <button type="submit" class="submit-btn1">Kyçu</button>
                         </form>
 
                         <!--FORMA PER REGJISTRIM-->
                         <form id="register" class="input-group">
-                            <input type="text" name="emri" class="input-field1" placeholder="Emri dhe Mbiemri" required>
+                            <input type="text" id="reg-name" name="emri" class="input-field1" placeholder="Emri dhe Mbiemri" autocomplete="name" required>
                             <input type="text" name="emri_perdoruesit" class="input-field1" placeholder="Emri Përdoruesit" required>
-                            <input type="email" name="email" class="input-field1" placeholder="Email" required>
+                            <input type="email" id="reg-email" name="email" class="input-field1" placeholder="Email" autocomplete="email" required>
                             <input type="date" name="datelindja" class="input-field1" placeholder="Datëlindja (YYYY-MM-DD)" required>
                             <input type="password" name="password" class="input-field1" placeholder="Fjalëkalimi" required>
                             <input type="password" name="confirm password" class="input-field1" placeholder="Rivendos Fjalëkalimin" required>
@@ -43,24 +46,20 @@
             </div>
         </div>
         <script>
-            // Animacioni për ndërrimin e formave
-            window.onload = function() {
-                // Kur hapet faqja, poziciono formën login në ekran dhe regjistrimin jashtë
-                document.getElementById("login").style.left = "10px";
-                document.getElementById("register").style.left = "450px";
-                document.getElementById("btn").style.left = "0px";
+         window.onload = function() {
+                login(); // hap login automatikisht
             };
 
             function login() {
-                document.getElementById("login").style.left = "10px";
-                document.getElementById("register").style.left = "450px";
+                document.getElementById("login").classList.add("active");
+                document.getElementById("register").classList.remove("active");
                 document.getElementById("btn").style.left = "0px";
             }
 
             function register() {
-                document.getElementById("login").style.left = "-400px";
-                document.getElementById("register").style.left = "10px";
-                document.getElementById("btn").style.left = "110px";
+                document.getElementById("login").classList.remove("active");
+                document.getElementById("register").classList.add("active");
+                document.getElementById("btn").style.left = "110px"; // ose sa është gjatësia e butonit
             }
 
         </script>

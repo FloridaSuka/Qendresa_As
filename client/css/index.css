@@ -11,25 +11,23 @@
 }
 
 /* STRUKTURA E FAQES */
-body, html {
+html, body {
     margin: 0;
     padding: 0;
-    height: auto;
-    /* min-height: 100vh; */
+    height: 100%;
+    overflow-x: hidden;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif ;
     background: linear-gradient(135deg, #6A7C8B 0%, #3F4E5A 50%, #2E3D49 100%);
 }
 
-
-
 .container {
+    min-height: 100vh; /* lartësi gjithmonë e plotë për ekranin */
     display: flex;
     justify-content: space-between;
+    padding: 0 5vw;
     align-items: flex-start;
     flex-wrap: nowrap;
-    height: 100vh;
-    padding: 0 5vw;
 }
 
 /* DIVI VIEW NE MAJTË */
@@ -192,7 +190,13 @@ body, html {
     max-width: 280px;
     transition: transform 0.5s ease;
     margin-left: 0; /* ose vendos 0 për të qenë në të majtë */
+    display: none;
 }
+
+.input-group.active {
+    display: block;
+}
+
 
 .input-field1, .input-field {
     width: 100%;
@@ -310,7 +314,6 @@ body, html {
     .view, .login-register {
         width: 100%;
         align-items: center;
-        text-align: center;
         margin-bottom: 20px;
     }
     .view .logo {
@@ -367,9 +370,10 @@ body, html {
         justify-content: center;
     }
     .form-box {
+        top: -150px;
         padding: 15px;
         border-radius: 10px;
-        min-height: 450;
+        height: auto;
     }
     .button-box {
         width: 95%;
@@ -416,7 +420,6 @@ body, html {
     .button1 a {
         font-size: 10px;
         top: 50%;
-        left: 0;
     }
 }
 
