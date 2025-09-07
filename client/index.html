@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qëndresa-AS | Ndërtimtari dhe Bujqësi</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+  </head>
+  <body>
+    <!-- HEADER / NAVBAR -->
+    <div id="header"></div>
+
+    <!-- MAIN CONTENT -->
+    <main style="padding-top: 120px; text-align: center">
+      <h2>Mirë se erdhët në Qëndresa-AS</h2>
+      <p>Shërbime profesionale në ndërtimtari dhe bujqësi për klientët tanë.</p>
+
+      <section style="margin-top: 40px">
+        <div
+          style="
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+          "
+        >
+          <div
+            style="
+              background: #264653;
+              color: white;
+              padding: 30px;
+              border-radius: 8px;
+              width: 250px;
+            "
+          >
+            <h3>Ndërtimtari</h3>
+            <p>
+              Projekte cilësore dhe zgjidhje profesionale për çdo nevojë
+              ndërtimore.
+            </p>
+          </div>
+          <div
+            style="
+              background: #2a9d8f;
+              color: white;
+              padding: 30px;
+              border-radius: 8px;
+              width: 250px;
+            "
+          >
+            <h3>Bujqësi</h3>
+            <p>Shërbime të specializuara për bujqësinë dhe zhvillimin rural.</p>
+          </div>
+          <div
+            style="
+              background: #e9c46a;
+              color: #264653;
+              padding: 30px;
+              border-radius: 8px;
+              width: 250px;
+            "
+          >
+            <h3>Shërbime Profesionale</h3>
+            <p>
+              Konsulencë, menaxhim projektesh dhe mbështetje për klientët tanë.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+      style="
+        text-align: center;
+        padding: 20px;
+        background: #264653;
+        color: white;
+        margin-top: 40px;
+      "
+    >
+      <p>&copy; 2025 Qëndresa-AS. Të gjitha të drejtat e rezervuara.</p>
+    </footer>
+
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+
+          // JS për hamburger pas ngarkimit të navbar
+          const hamburger = document.querySelector(".hamburger");
+          const navLinks = document.querySelector(".nav-links");
+          const overlay = document.querySelector(".nav-overlay");
+
+          hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("show");
+            overlay.classList.toggle("show");
+            hamburger.classList.toggle("open");
+          });
+
+          overlay.addEventListener("click", () => {
+            navLinks.classList.remove("show");
+            overlay.classList.remove("show");
+            hamburger.classList.remove("open");
+          });
+        })
+        .catch((err) => console.error("Navbar nuk u ngarkua", err));
+    </script>
+  </body>
+</html>

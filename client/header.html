@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qëndresa-AS</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+  </head>
+<body
+  <header>
+    <nav>
+      <div class="logo-container">
+        <img src="img/logo.png" alt="Logo" />
+        <h1>Qëndresa-AS</h1>
+      </div>
+
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Ballina</a></li>
+          <li><a href="ndertimtari.html">Ndërtimtari</a></li>
+          <li><a href="bujqesia.html">Bujqësia</a></li>
+          <li id="top"><a href="rrethnesh.html">Rreth nesh</a></li>
+        </ul>
+
+      <div class="nav-overlay"></div>
+    </nav>
+  </header>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navLinks = document.querySelector(".nav-links");
+    const overlay = document.querySelector(".nav-overlay");
+
+    if (hamburger && navLinks && overlay) {
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+        overlay.classList.toggle("show");
+        hamburger.classList.toggle("open");
+      });
+
+      overlay.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        overlay.classList.remove("show");
+        hamburger.classList.remove("open");
+      });
+    }
+  </script>
+  </body>
+</html>
