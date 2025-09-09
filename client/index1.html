@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="sq">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+      character="UTF-8"
+    />
+    <title>Qëndresa-AS - Kyçja dhe Regjistrimi</title>
+    <link rel="icon" type="image/png" href="img/logo.png" />
+    <link rel="stylesheet" href="css\index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="view">
+        <img src="img/logo.png" alt="Logo" class="logo" />
+        <p class="show" id="wave-text">
+          Mirë se vini në Qëndresa-AS!<br />Së bashku fillojmë një rrugëtim të
+          sigurt.
+        </p>
+        <a href="home.html" class="next">Vazhdo pa u kyçur</a>
+      </div>
+
+      <div class="login-register">
+        <div class="form-box">
+          <div class="button-box">
+            <div id="btn"></div>
+            <button type="button" class="toggle-btn" onclick="login()">
+              Kyçu
+            </button>
+            <button type="button" class="toggle-btn" onclick="register()">
+              Hyr
+            </button>
+
+            <!--FORMA PER LOGIN-->
+            <form id="login" class="input-group active">
+              <input
+                type="text"
+                id="login-username"
+                name="emri_perdoruesit"
+                class="input-field"
+                placeholder="Emri i përdoruesit"
+                autocomplete="username"
+                required
+              />
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                class="input-field"
+                placeholder="Fjalëkalimi"
+                autocomplete="current-password"
+                required
+              />
+              <div class="button1">
+                <a href="resetPassword.php">Keni harruar fjalëkalimin?</a>
+              </div>
+              <button type="submit" class="submit-btn1">Kyçu</button>
+            </form>
+
+            <!--FORMA PER REGJISTRIM-->
+            <form id="register" class="input-group">
+              <input
+                type="text"
+                id="reg-name"
+                name="emri"
+                class="input-field1"
+                placeholder="Emri dhe Mbiemri"
+                autocomplete="name"
+                required
+              />
+              <input
+                type="text"
+                name="emri_perdoruesit"
+                class="input-field1"
+                placeholder="Emri Përdoruesit"
+                required
+              />
+              <input
+                type="text"
+                name="datelindja"
+                class="input-field1"
+                placeholder="Datëlindja (YYYY-MM-DD)"
+                required
+                onfocus="(this.type='date')"
+                onblur="if(this.value==''){this.type='text'}"
+              />
+              <select name="qyteti" class="input-field1" required>
+                <option value="" disabled selected>Zgjedh Qytetin</option>
+                <option value="Deçan">Deçan</option>
+                <option value="Dragash">Dragash</option>
+                <option value="Drenas">Drenas</option>
+                <option value="Ferizaj">Ferizaj</option>
+                <option value="Fushë Kosovë">Fushë Kosovë</option>
+                <option value="Gjakovë">Gjakovë</option>
+                <option value="Gjilan">Gjilan</option>
+                <option value="Han i Elezit">Han i Elezit</option>
+                <option value="Istog">Istog</option>
+                <option value="Kaçanik">Kaçanik</option>
+                <option value="Kamenicë">Kamenicë</option>
+                <option value="Klina">Klina</option>
+                <option value="Kllokot">Kllokot</option>
+                <option value="Leposaviq">Leposaviq</option>
+                <option value="Lipjan">Lipjan</option>
+                <option value="Malishevë">Malishevë</option>
+                <option value="Mamushë">Mamushë</option>
+                <option value="Mitrovicë">Mitrovicë</option>
+                <option value="Novobërdë">Novobërdë</option>
+                <option value="Obiliq">Obiliq</option>
+                <option value="Partesh">Partesh</option>
+                <option value="Pejë">Pejë</option>
+                <option value="Podujevë">Podujevë</option>
+                <option value="Prishtinë">Prishtinë</option>
+                <option value="Prizren">Prizren</option>
+                <option value="Rahovec">Rahovec</option>
+                <option value="Ranillug">Ranillug</option>
+                <option value="Shtërpcë">Shtërpcë</option>
+                <option value="Shtime">Shtime</option>
+                <option value="Skenderaj">Skenderaj</option>
+                <option value="Suharekë">Suharekë</option>
+                <option value="Viti">Viti</option>
+                <option value="Vushtrri">Vushtrri</option>
+                <option value="Zubin Potok">Zubin Potok</option>
+                <option value="Zveçan">Zveçan</option>
+              </select>
+
+              <input
+                type="email"
+                id="reg-email"
+                name="email"
+                class="input-field1"
+                placeholder="Email"
+                autocomplete="email"
+                required
+              />
+              <input
+                type="email"
+                id="reg-tel"
+                name="tel"
+                class="input-field1"
+                placeholder="Numri i telefonit"
+                autocomplete="tel"
+                required
+              />
+              <input
+                type="password"
+                name="password"
+                class="input-field1"
+                placeholder="Fjalëkalimi"
+                required
+              />
+              <input
+                type="password"
+                name="confirm password"
+                class="input-field1"
+                placeholder="Rivendos Fjalëkalimin"
+                required
+              />
+              <button type="submit" class="submit-btn">Regjistrohu</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      window.onload = function () {
+        login(); // hap login automatikisht
+      };
+
+      function login() {
+        document.getElementById("login").classList.add("active");
+        document.getElementById("register").classList.remove("active");
+        document.getElementById("btn").style.left = "0px";
+      }
+
+      function register() {
+        document.getElementById("login").classList.remove("active");
+        document.getElementById("register").classList.add("active");
+        document.getElementById("btn").style.left = "110px";
+      }
+    </script>
+    <script>
+      const logo = document.querySelector(".logo");
+
+      setInterval(() => {
+        logo.classList.add("flip");
+        setTimeout(() => {
+          logo.classList.remove("flip");
+        }, 1000); // animacioni zgjat 0.6 sekonda, pastaj hiqet për t'u rifilluar herën tjetër
+      }, 7000); // çdo 3 sekonda
+    </script>
+  </body>
+</html>
