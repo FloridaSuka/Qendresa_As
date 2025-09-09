@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Qëndresa-AS | Ndërtimtari dhe Bujqësi</title>
-    <link rel="icon" type="image/png" href="img/logo.png" />
-    <link rel="stylesheet" href="css/stylesheet.css" />
+    <link rel="icon" type="image/png" href="client/img/logo.png" />
+    <link rel="stylesheet" href="client/css/stylesheet.css" />
   </head>
   <body>
     <!-- HEADER / NAVBAR -->
@@ -84,7 +84,7 @@
     </footer>
 
     <script>
-      fetch("header.html")
+      fetch("client/header.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("header").innerHTML = data;
